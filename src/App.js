@@ -3,7 +3,7 @@ import { Link, hashHistory } from 'react-router';
 import NavLink from './NavLink';
 import logo from './sw_logo.png';
 import './app.css';
-import {randNum} from './helpers'
+import {randNum, makeid} from './helpers'
 
 
 export default class App extends Component {
@@ -11,12 +11,17 @@ export default class App extends Component {
 
   randomPage = (e) => {
     e.preventDefault();
-    const pages = ['/','/home','/films','/people','/planets','/species','/starships','/vehicles']; 
+    const pages = ['/','/home','/films','/characters','/planets','/species','/starships','/vehicles']; 
     let rnd = pages[randNum()];
 
     (hashHistory.getCurrentLocation().pathname === rnd)
       ? hashHistory.push(pages[randNum()])
       : hashHistory.push(rnd);
+  }
+
+  noPage = (e) => {
+    e.preventDefault();
+    hashHistory.push(makeid())
   }
 
   render() {
@@ -29,14 +34,17 @@ export default class App extends Component {
         <div className="btn-container">
           <a href="#" onClick={this.randomPage} className="btn btn-primary">Get Me Some Random Page!</a>
         </div>
+        <div className="btn-container">
+          <a href="#" onClick={this.noPage} className="btn btn-danger">Send Me Nowhere!</a>
+        </div>
         <nav className="navbar navbar-default">
           <div className="container">
             <ul className="nav navbar-nav">
               <li><NavLink to="/home"><span className="glyphicon glyphicon-home" aria-hidden="true"></span> Home</NavLink></li>
               <li><NavLink to="/films">Films</NavLink></li>
-              <li><NavLink to="/people">People</NavLink></li>
-              <li><NavLink to="/planets">Planets</NavLink></li>
+              <li><NavLink to="/characters">Characters</NavLink></li>
               <li><NavLink to="/species">Species</NavLink></li>
+              <li><NavLink to="/planets">Planets</NavLink></li>
               <li><NavLink to="/starships">Starships</NavLink></li>
               <li><NavLink to="/vehicles">Vehicles</NavLink></li>
             </ul>
