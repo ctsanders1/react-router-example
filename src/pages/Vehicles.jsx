@@ -5,6 +5,7 @@ export default class Vehicles extends Component {
     return (
       <div className="col-sm-4 col-sm-offset-4">
         <h2>Vehicles (39)</h2>
+        <p>Sand Crawler, T-16 skyhopper, X-34 landspeeder, TIE/LN starfighter, Snowspeeder, TIE bomber, AT-AT, AT-ST, Storm IV Twin-Pod cloud car, Sail barge ...</p>
       </div>
     );
   }

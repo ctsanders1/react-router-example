@@ -4,7 +4,8 @@ export default class Planets extends Component {
   render() {
     return (
       <div className="col-sm-4 col-sm-offset-4">
-        <h2>Planets (61)</h2> 
+        <h2>Planets (61)</h2>
+        <p>Alderaan, Yavin IV, Hoth, Dagobah, Bespin, Endor, Naboo, Coruscant, Kamino, Geonosis ...</p>
       </div>
     );
   }
