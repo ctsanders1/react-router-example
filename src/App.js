@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, hashHistory } from 'react-router';
 import NavLink from './NavLink';
 import logo from './sw_logo.png';
+import reactLogo from './logo.svg';
 import './app.css';
 import {randNum, makeid} from './helpers'
 
@@ -51,6 +52,9 @@ export default class App extends Component {
           </div>
         </nav>
         {this.props.children}
+        <div className="footer col-sm-12">
+          <p>Made with <span className="text-danger">♥</span><img src={reactLogo} alt=".." height="16" title="ReactJS" /> by <a href="http://danko-m.github.io/" target="_blank">Danko</a></p>
+        </div>
       </div>
     );
   }
