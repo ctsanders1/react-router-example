@@ -53,7 +53,7 @@ export default class App extends Component {
         </nav>
         {this.props.children}
         <div className="footer col-sm-12">
-          <p>Made with <span className="text-danger">♥</span><img src={reactLogo} alt=".." height="16" title="ReactJS" /> by <a href="http://danko-m.github.io/" target="_blank">Danko</a></p>
+          <p>Made with <span className="text-danger">♥</span> /<img src={reactLogo} alt=".." height="16" title="ReactJS" /> by <a href="https://dankoknad.github.io/" target="_blank">Danko</a></p>
         </div>
       </div>
     );
