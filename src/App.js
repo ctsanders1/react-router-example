@@ -51,7 +51,9 @@ export default class App extends Component {
             </ul>
           </div>
         </nav>
-        {this.props.children}
+        <div className="col-sm-6 col-sm-offset-3">
+          {this.props.children}
+        </div>
         <div className="footer col-sm-12">
           <p>Made with <span className="text-danger">♥</span> /<img src={reactLogo} alt=".." height="16" title="ReactJS" /> by <a href="https://dankoknad.github.io/" target="_blank">Danko</a></p>
         </div>
