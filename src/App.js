@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { NavLink, Link, withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import Navbar from './Navbar';
 import logo from './sw_logo.png';
 import reactLogo from './logo.svg';
 import './app.css';
@@ -38,15 +39,7 @@ class App extends Component {
         </div>
         <nav className="navbar navbar-default">
           <div className="container">
-            <ul className="nav navbar-nav">
-              <li><NavLink to="/home" activeClassName="active"><span className="glyphicon glyphicon-home" aria-hidden="true"></span> Home</NavLink></li>
-              <li><NavLink to="/films" activeClassName="active">Films</NavLink></li>
-              <li><NavLink to="/characters" activeClassName="active">Characters</NavLink></li>
-              <li><NavLink to="/species" activeClassName="active">Species</NavLink></li>
-              <li><NavLink to="/planets" activeClassName="active">Planets</NavLink></li>
-              <li><NavLink to="/starships" activeClassName="active">Starships</NavLink></li>
-              <li><NavLink to="/vehicles" activeClassName="active">Vehicles</NavLink></li>
-            </ul>
+            <Navbar />
           </div>
         </nav>
         <div className="col-sm-6 col-sm-offset-3">
