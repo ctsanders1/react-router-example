@@ -13,12 +13,17 @@ import NotFound from './pages/NotFound';
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 
-import { Router, Route, hashHistory, IndexRoute } from 'react-router';
+import { Router, Route, Switch } from 'react-router-dom';
+
+import createBrowserHistory from 'history/createBrowserHistory'
+
+const history = createBrowserHistory()
 
 render((
-  <Router history={hashHistory}>
-    <Route path="/" component={App}>
-      <IndexRoute component={Welcome}/>
+  <Router history={history}  basename="/react-router-example">
+    <App>
+      <Switch>
+      <Route path="/" component={Welcome} exact/>
       <Route path="/home" component={Home}/>
       <Route path="/films" component={Films}/>
       <Route path="/characters" component={Characters}/>
@@ -27,6 +32,7 @@ render((
       <Route path="/starships" component={Starships}/>
       <Route path="/vehicles" component={Vehicles}/>
       <Route path="*" component={NotFound}/>
-    </Route>
+      </Switch>
+    </App>
   </Router>
 ), document.getElementById('root'))

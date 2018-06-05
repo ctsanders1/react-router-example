@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import { Link, hashHistory } from 'react-router';
-import NavLink from './NavLink';
+import { NavLink, Link, withRouter } from 'react-router-dom';
 import logo from './sw_logo.png';
 import reactLogo from './logo.svg';
 import './app.css';
 import {randNum, makeid} from './helpers'
 
-
-export default class App extends Component {
+class App extends Component {
   state = {}
 
   randomPage = (e) => {
@@ -15,14 +13,14 @@ export default class App extends Component {
     const pages = ['/','/home','/films','/characters','/planets','/species','/starships','/vehicles']; 
     let rnd = pages[randNum()];
 
-    (hashHistory.getCurrentLocation().pathname === rnd)
-      ? hashHistory.push(pages[randNum()])
-      : hashHistory.push(rnd);
+    (this.props.location.pathname === rnd)
+      ? this.props.history.push(pages[randNum()])
+      : this.props.history.push(rnd);
   }
 
   noPage = (e) => {
     e.preventDefault();
-    hashHistory.push(makeid())
+    this.props.history.push(makeid())
   }
 
   render() {
@@ -41,13 +39,13 @@ export default class App extends Component {
         <nav className="navbar navbar-default">
           <div className="container">
             <ul className="nav navbar-nav">
-              <li><NavLink to="/home"><span className="glyphicon glyphicon-home" aria-hidden="true"></span> Home</NavLink></li>
-              <li><NavLink to="/films">Films</NavLink></li>
-              <li><NavLink to="/characters">Characters</NavLink></li>
-              <li><NavLink to="/species">Species</NavLink></li>
-              <li><NavLink to="/planets">Planets</NavLink></li>
-              <li><NavLink to="/starships">Starships</NavLink></li>
-              <li><NavLink to="/vehicles">Vehicles</NavLink></li>
+              <li><NavLink to="/home" activeClassName="active"><span className="glyphicon glyphicon-home" aria-hidden="true"></span> Home</NavLink></li>
+              <li><NavLink to="/films" activeClassName="active">Films</NavLink></li>
+              <li><NavLink to="/characters" activeClassName="active">Characters</NavLink></li>
+              <li><NavLink to="/species" activeClassName="active">Species</NavLink></li>
+              <li><NavLink to="/planets" activeClassName="active">Planets</NavLink></li>
+              <li><NavLink to="/starships" activeClassName="active">Starships</NavLink></li>
+              <li><NavLink to="/vehicles" activeClassName="active">Vehicles</NavLink></li>
             </ul>
           </div>
         </nav>
@@ -61,3 +59,5 @@ export default class App extends Component {
     );
   }
 }
+
+export default withRouter(App)
