@@ -1,5 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import App from './App';
 import Welcome from './pages/Welcome';
 import Home from './pages/Home';
@@ -13,14 +14,11 @@ import NotFound from './pages/NotFound';
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 
-import { Router, Route, Switch } from 'react-router-dom';
-
 import createBrowserHistory from 'history/createBrowserHistory'
-
-const history = createBrowserHistory()
+const history = createBrowserHistory({ basename: '/react-router-example' });
 
 render((
-  <Router history={history}  basename="/react-router-example">
+  <Router history={history}>
     <App>
       <Switch>
       <Route path="/" component={Welcome} exact/>
