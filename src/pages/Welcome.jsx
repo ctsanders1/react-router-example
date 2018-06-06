@@ -12,7 +12,7 @@ export default class Welcome extends Component {
             <span className="glyphicon glyphicon-ok text-primary" />
           </li>
           <li>
-            Use some components: Router, Route, IndexRoute, NavLink and Link{' '}
+            Use some components: Router, Route, Switch, Link and withRouter{' '}
             <span className="glyphicon glyphicon-ok text-primary" />
           </li>
           <li>
@@ -24,7 +24,7 @@ export default class Welcome extends Component {
             <span className="glyphicon glyphicon-ok text-primary" />
           </li>
           <li>
-            Have some fun, ofcourse!{' '}
+            Have some fun, of course!{' '}
             <span className="glyphicon glyphicon-ok text-primary" />
           </li>
         </ul>
